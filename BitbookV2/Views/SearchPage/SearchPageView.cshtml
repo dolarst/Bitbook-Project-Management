@@ -1,0 +1,171 @@
+﻿@using BitbookV2.Models
+@model SearchPageViewModel
+@{
+    Layout = null;
+    var home = (Registration)Session["Registration"];
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchPageView</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Custom-navbar2.css" rel="stylesheet" />
+
+    <link href="~/Content/styles.css" rel="stylesheet" />
+
+
+    <style>
+        .mybtn {
+            border: 0 none;
+            width: 60px;
+            float: left;
+            padding: 0;
+            text-align: center;
+            height: 30px;
+            cursor: pointer;
+            background: gainsboro;
+        }
+
+        .btn-default {
+            background: white;
+        }
+
+        .navbar-blue {
+            background-color: #f0b937;
+        }
+
+        .navbar-right {
+            padding-right: 15px;
+        }
+
+        .dropdown-menu > li > a:hover {
+            background-color: #f0b937;
+            background-image: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+
+
+
+
+            <!-- main right col -->
+            <div class="column col-sm-12 col-xs-12" id="main">
+
+                <!-- top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div class="navbar-header">
+
+                        <a href="/Newsfeed/NewsfeedHome" class="navbar-brand logo">b</a>
+                    </div>
+                    <nav class="collapse navbar-collapse" role="navigation">
+                        <form class="navbar-form navbar-left">
+                            <div class="input-group input-group-sm" style="max-width:360px;">
+                                <input type="text" name="search_text" id="search_text" class="search" placeholder="Search" />
+                                <div class="input-group-btn">
+                                    <button class="btn mybtn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+
+                            </div>
+                            <div id="divResult"> </div>
+                        </form>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/Profile/ProfilePage/@home.Id"><i class="glyphicon glyphicon-user"></i> Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/Newsfeed/LogOut">Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+                
+                
+                
+                
+                <div style="clear: both;padding-top: 100px" class="col-lg-10">
+                    
+                    
+                    
+                    
+                    <div class="panel panel-default">
+
+
+                        <div class="panel-heading">
+
+                            <h3 class="fa-font fa-facebook" > Search Result</h3>
+                        </div>
+
+
+
+
+                        <div class="panel-body">
+                           
+                            @foreach (var user in Model.Users)
+                            {
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <img src="/Newsfeed/GetProfilePictureByProfileId/@user.Id" alt=" " style="height: 40px;width: 40px" />
+                                        <a href="/Profile/ProfilePage/@user.Id">
+                                            
+                                            <h4 class="fa-font fa-facebook" style="color: 	#800080;"><b>@user.FirstName @user.LastName</b></h4>
+                                        </a>
+                                    </li>
+                                
+                                
+                                
+
+                                </ul>
+
+                            }
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

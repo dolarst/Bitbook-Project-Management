@@ -1,0 +1,159 @@
+﻿@model BitbookV2.Models.LoginOrRegistrationViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegistrationLogin</title>
+  
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <style>
+       label.error {
+            color: red;
+        }
+
+        #banner {
+            background-color: #666666;
+            background-image: url('../../Default pics/flat-wallpaper-6.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 14em 0;
+            text-align: center;
+            position: relative;
+        }
+
+
+    </style>
+</head>
+    <body>
+        
+      
+        <div id="banner">
+            <h1 style="display: block;font-size: 30px;">BitBook</h1>
+            <div class="container" style="position:relative;background-color: black;opacity: 0.7;width: 50%">
+
+                <div style="opacity: 1.5">
+                    <h3>Registration</h3>
+
+                    @using (Html.BeginForm("Register", "RegistrationLogin", FormMethod.Post, new { id = "registerForm", @class = "form-group" }))
+                    {
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.FirstName)
+                            @Html.TextBoxFor(a => a.Registration.FirstName,new {@class="form-control"})
+                            @Html.ValidationMessageFor(a => a.Registration.FirstName)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.LastName)
+                            @Html.TextBoxFor(a => a.Registration.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Registration.LastName)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.Email)
+                            @Html.TextBoxFor(a => a.Registration.Email, htmlAttributes: new { name = "Email", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Registration.Email)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.Password)
+                            @Html.PasswordFor(a => a.Registration.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Registration.Password)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.PasswordConfirm)
+                            @Html.PasswordFor(a => a.Registration.PasswordConfirm, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Registration.PasswordConfirm)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.BirthDate)
+                            @Html.TextBoxFor(a => a.Registration.BirthDate, htmlAttributes: new { id = "BirthDate", @class="form-control" })
+                            @Html.ValidationMessageFor(a => a.Registration.BirthDate)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Registration.Gender)
+                            @Html.RadioButtonFor(a => a.Registration.Gender, "Male") Male
+                            @Html.RadioButtonFor(a => a.Registration.Gender, "Female") Female
+                            @Html.ValidationMessageFor(a => a.Registration.Gender)
+                        </div>
+
+
+                        <button type="submit" class="btn btn-default" >Register</button>
+
+
+
+                    }
+
+                    <br />
+                    <br />
+                    <br />
+                    
+                    
+                    
+                    <h3>Log In</h3>
+                    @using (Html.BeginForm("Login", "RegistrationLogin", FormMethod.Post, new { id = "registerForm", @class = "form-group" }))
+                    {
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Login.Email)
+                            @Html.TextBoxFor(a => a.Login.Email, htmlAttributes: new { name = "Email", @class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Login.Email)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(a => a.Login.Password)
+                            @Html.PasswordFor(a => a.Login.Password, new{@class = "form-control" })
+                            @Html.ValidationMessageFor(a => a.Login.Password)
+                        </div>
+
+
+
+
+                        <button type="submit" class="btn btn-default">Log In</button>
+                        @Html.ValidationSummary(true);
+
+                    }
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+            <script src="~/Scripts/jquery-3.1.0.js"></script>
+            <script src="~/Scripts/jquery.validate.min.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+            <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+            <script src="~/Scripts/bootstrap.js"></script>
+            <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+            <script>
+
+                $(document).ready(function () {
+
+
+
+                    $('#BirthDate').datepicker({
+
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                })
+            </script>
+
+</body>
+        </html>

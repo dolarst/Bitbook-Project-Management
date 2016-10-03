@@ -1,0 +1,1170 @@
+﻿@using System.Web.UI.WebControls
+@using BitbookV2.Models
+@model BitbookV2.Models.ProfilePageViewModel
+@{
+    Layout = null;
+    var notificationType=new NotificationType();
+    var home = (Registration) Session["Registration"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProfilePage</title>
+    
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+    <link href="~/Content/styles.css" rel="stylesheet" />
+
+    <link href="~/Content/Custom-navbar2.css" rel="stylesheet" />
+    <style>
+        .mybtn {
+            border: 0 none;
+            width: 60px;
+            float: left;
+            padding: 0;
+            text-align: center;
+            height: 30px;
+            cursor: pointer;
+            background: gainsboro;
+        }
+
+        .btn-default {
+            background: white;
+        }
+
+        .navbar-blue {
+            background-color: #f0b937;
+        }
+
+        .navbar-right {
+            padding-right: 15px;
+        }
+        .dropdown-menu > li > a:hover {
+    background-color: #f0b937;
+    background-image: none;
+}
+ hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+
+
+
+
+            <!-- main right col -->
+            <div class="column col-sm-12 col-xs-12" id="main">
+
+                <!-- top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div class="navbar-header">
+
+                        <a href="/Newsfeed/NewsfeedHome" class="navbar-brand logo">b</a>
+                    </div>
+                    <nav class="collapse navbar-collapse" role="navigation">
+                       
+                       @using (Html.BeginForm("SearchUser", "Profile", FormMethod.Post, new { id = "searchUserForm", @class = "navbar-form navbar-left" }))
+                       {
+
+
+
+                               <div class="input-group input-group-sm" style="max-width: 360px;">
+                                   <input type="text" name="search_text" id="search_text" class="search" placeholder="Search" />
+                                   <div class="input-group-btn">
+                                       <button class="btn mybtn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                   </div>
+
+                               </div>
+                               <div id="divResult"> </div>
+                      
+
+
+
+                       }    
+                        
+
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/Profile/ProfilePage/@home.Id"><i class="glyphicon glyphicon-user"></i> Profile</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-option-vertical"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/Newsfeed/LogOut">Log Out</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+                <!-- content -->
+                <!-- main col left -->
+                <div class="col-sm-9">
+
+                    <div class="banner_holder">
+                        @if (Model.BasicInfoViewModel.CoverPicId != 0 && Model.BasicInfoViewModel.CoverPicId != null)
+                        {
+                            <img src="/Profile/RetrieveImage/@Model.BasicInfoViewModel.CoverPicId" alt=" " style="height: 350px; display: block;margin: auto" />
+
+                        }
+                        else
+                      
+  {
+                            <img src="~/Default pics/default.jpg" style="height: 350px; display: block;margin: auto;width:970px "  />
+
+                        }
+                    
+                           
+                        @if (Model.Registration.Id == Model.LoggedInUser.Id)
+                        {
+                            <button type="button" class="btn btn-default pull-right" style="bottom:10px;right: 10px;position: absolute;display: inline-block" data-toggle="modal" data-target="#myCoverModal">Change Cover Picture</button>
+
+
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+                     
+                    </div>
+                    <div>
+                        <h1 style="color: #45527C">@Model.Registration.FirstName @Model.Registration.LastName</h1>
+
+                        @if (Model.Registration.Id != Model.LoggedInUser.Id)
+                        {
+                            if (Model.FriendshipStatus == 0)
+                            {
+                                @Html.ActionLink("Add Friend", "AddFriend", "Profile", new { profileId = Model.Registration.Id }, new { @class = "btn btn-default" })
+                            }
+                            if (Model.FriendshipStatus == 1)
+                            {
+                                <h6>Pending Request</h6>
+                                @Html.ActionLink("Cancel Request", "DropFriendRelation", "Profile", new { profileId = Model.Registration.Id }, new { @class = "btn btn-default" })
+                            }
+                            if (Model.FriendshipStatus == 2)
+                            {
+
+                                @Html.ActionLink("Confirm Request", "ConfirmRequest", "Profile", new { profileId = Model.Registration.Id }, new { @class = "btn btn-default" })
+
+                                @Html.ActionLink("Decline", "DropFriendRelation", "Profile", new { profileId = Model.Registration.Id }, new { @class = "btn btn-default" })
+                            }
+                            if (Model.FriendshipStatus == 3)
+                            {
+                                <h6>Friends</h6>
+                                @Html.ActionLink("Unfriend", "DropFriendRelation", "Profile", new { profileId = Model.Registration.Id }, new { @class = "btn btn-default" })
+                            }
+
+                        }
+                    </div>
+                </div>
+                <div style="margin-top: 150px;position: relative">
+                    @if (Model.BasicInfoViewModel.ProfilePicId != 0 && Model.BasicInfoViewModel.ProfilePicId != null)
+                    {
+                        <img src="/Profile/RetrieveImage/@Model.BasicInfoViewModel.ProfilePicId" alt=" " class="img-thumbnail" style="height: 160px;width: 160px"/>
+
+                    }
+                    else
+                    {
+
+                        <img src="~/Default pics/060410_Facebook_profile_pic_1.jpg" class="img-thumbnail" style="height: 160px;width: 160px" />
+                    }
+                    
+                    
+                    @if (Model.Registration.Id == Model.LoggedInUser.Id)
+                    {
+
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">Change Profile Picture</button>
+                    }
+                        
+                        
+                        </div>
+
+                <div style="clear: both">
+
+                    @if (Model.FriendshipStatus == 3)
+                    {
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#timeline">Timeline</a></li>
+                            <li><a href="#aboutme">About</a></li>
+                            <li><a href="#friendlist">Friends</a></li>
+                            @if (Model.Registration.Id == Model.LoggedInUser.Id)
+                            {
+                                <li><a href="#friendRequestlist">Friend Requests</a></li>
+                                
+                            }
+                            
+
+                        </ul>
+
+                        <div class="padding" style="padding-left: 0px;">
+                            <div class="full col-sm-9" style="padding-top: 20px;">
+                                <!-- content -->
+
+
+                                <div class="tab-content">
+                                    <div id="timeline" class="tab-pane fade in active">
+                                        <div class="row">
+
+                                            <!-- main col left -->
+                                            <div class="col-sm-4">
+
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading"><h4>Notifications</h4></div>
+                                                    <div class="panel-body">
+                                                        @if (Model.LoggedInUser.Id == Model.Registration.Id)
+                                                        {
+                                                            if (Model.Notifications != null)
+                                                            {
+                                                                foreach (var notification in Model.Notifications)
+                                                                {
+                                                                    <img src="/Newsfeed/GetProfilePictureByProfileId/@notification.SenderId" alt=" " style="height: 40px;width: 40px" />
+
+
+
+                                                                    if (notification.NotificationType == notificationType.Comment)
+                                                                    {
+
+                                                                        <p><a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                               <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                           </a> has commented on your post. </p>
+                                                                         <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.Like)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has liked your post.
+                                                                        </p>
+                                                                            <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.PostToWall)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has posted on your wall.
+                                                                        </p>
+                                                                          <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.CommentOnSharedPost)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has commented on a post shared on your wall.
+                                                                        </p>
+                                                                           <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.LikeOnSharedPost)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has liked a post shared on your wall.
+                                                                        </p>                                                        <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.ChangeProfilePicture)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has changed his profile picture.
+                                                                        </p>  <p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                    if (notification.NotificationType == notificationType.ChangeCoverPicture)
+                                                                    {
+                                                                        <p>
+                                                                            <a href="/Profile/ProfilePage/@notification.SenderId">
+                                                                                <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@notification.Sender.FirstName @notification.Sender.LastName</b></h4>
+                                                                            </a> has changed his cover picture.
+                                                                        </p><p>@notification.DateTime.ToString()</p>
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="panel panel-default">
+
+                                                    <div class="panel-body">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                        <form>
+                                                            <div class="input-group">
+                                                                <div class="input-group-btn">
+                                                                    <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+                                                                </div>
+
+                                                                <input type="text" class="form-control  col-xs-4" placeholder="Add a comment..">
+
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="panel panel-default">
+
+                                                    <div class="panel-body">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                        <form>
+                                                            <div class="input-group">
+                                                                <div class="input-group-btn">
+                                                                    <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+                                                                </div>
+
+                                                                <input type="text" class="form-control  col-xs-4" placeholder="Add a comment..">
+
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                            <div class="col-sm-5">
+
+                                                <div class="well well-sm">
+
+                                                    @using (Html.BeginForm("SavePost", "Profile", FormMethod.Post, new { id = "savePostForm", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                                                    {
+
+                                                        <h4>What's New</h4>
+                                                        <div class="form-group" style="padding: 14px;">
+
+                                                            @Html.TextAreaFor(a => a.Post.PostText, new { id = "postButton", @class = "form-control", @placeholder = "Update your status" })
+                                                            <input type="file" name="ImageData" id="ImageData" onchange=" fileCheck(this); " />
+                                                        </div>
+                                                        <input type="hidden" name="postSharedUserId" value="@Model.Registration.Id" />
+                                                        <button class="btn btn-primary pull-right" type="submit">Post</button>
+                                                        <ul class="list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+
+                                                    }
+                                                    
+                                                    <p> @Html.ValidationSummary(true)</p>
+                                                </div>
+
+
+                                                @if (Model.PostList != null)
+                                                {
+                                                    foreach (var post in Model.PostList)
+                                                    {
+                                                        <div class="panel panel-default">
+                                                            
+
+                                                            <div class="panel-heading">
+
+                                                                @if (post.PostOwnedUserId == Model.LoggedInUser.Id || post.PostSharedUserId == Model.LoggedInUser.Id)
+                                                                {
+
+                                                                    @Html.ActionLink("Delete", "DeletePost", "Profile", new { postId = post.Id, profileId= Model.Registration.Id }, new { @class = "btn btn-default pull-right" })
+
+                                                                }
+
+                                                            </div>
+
+                                                            <div class="panel-body">
+                                                                
+
+                                                                <img src="/Newsfeed/GetProfilePictureByProfileId/@post.PostOwnedUserId" alt=" " style="height: 40px;width: 40px" />
+                                                                
+                                                                @if (post.PostOwnedUserId == post.PostSharedUserId)
+                                                                {
+                                                                    <a href="/Profile/ProfilePage/@post.PostOwnedUserId">
+                                                                        <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@post.PostOwnedUser.FirstName @post.PostOwnedUser.LastName</b></h4>
+                                                                    </a>
+
+
+                                                                }
+                                                                @if (post.PostOwnedUserId != post.PostSharedUserId)
+                                                                {
+                                                                    <div class="form-inline">
+
+                                                                        <a href="/Profile/ProfilePage/@post.PostOwnedUserId"><h4 class="fa-font fa-facebook" style="color:#800080;"><b>@post.PostOwnedUser.FirstName @post.PostOwnedUser.LastName</b></h4></a>
+
+                                                                        <a><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                                                        <a href="/Profile/ProfilePage/@post.PostSharedUserId"><h4 class="fa-font fa-facebook" style="color:#800080;"><b>@post.PostSharedUser.FirstName @post.PostSharedUser.LastName</b></h4></a>
+                                                                    </div>
+
+                                                                }
+                                                                
+                                                                <p>@post.DateTime.ToString()</p>
+
+                                                                <p>@post.PostText</p>
+
+                                                                @if (post.Image != null)
+                                                                {
+
+
+                                                                    <img src="/Profile/RetrieveImage/@post.Image.Id" alt=" "class="img-responsive" />
+                                                                }
+
+                                                                @using (Html.BeginForm("SaveComment", "Profile", FormMethod.Post, new { id = "saveCommentForm", @class = "form-horizontal", }))
+                                                                {
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-btn">
+                                                                            <button class="btn btn-default" type="submit">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+                                                                        </div>
+                                                                        <input type="hidden" name="postId" value="@post.Id" />
+                                                                        <input type="hidden" name="profileId" value="@Model.Registration.Id" />
+                                                                        <input type="text" class="form-control  col-xs-4" name="commentText" placeholder="Add a comment..">
+
+
+                                                                    </div>
+
+                                                                }
+                                                                @using (Html.BeginForm("SaveLike", "Profile", FormMethod.Post, new { id = "saveLikeForm", @class = "form-horizontal", }))
+                                                                {
+                                                                    <input type="hidden" name="postId" value="@post.Id" />
+                                                                    <input type="hidden" name="profileId" value="@Model.Registration.Id" />
+                                                                 
+                                                                    if (post.LikedUserList.Where(c => c.Id == Model.LoggedInUser.Id).FirstOrDefault() != null)
+                                                                    {
+                                                                        <button class="btn btn-primary pull-right" type="submit">Liked</button>
+                                                                    }
+                                                                    if (post.LikedUserList.Where(c => c.Id == Model.LoggedInUser.Id).FirstOrDefault() == null)
+                                                                    {
+                                                                        <button class="btn btn-default pull-right" type="submit">Like</button>
+                                                                    }
+
+                                                                }
+
+
+
+
+
+                                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#like-@post.Id">@post.LikedUserList.Count Likes</button>
+
+                                                                <div id="like-@post.Id" class="modal fade" role="dialog">
+                                                                    <div class="modal-dialog">
+
+                                                                        <!-- Modal content-->
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <h4 class="modal-title">Liked List</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+
+
+                                                                                @foreach (var likedUserList in post.LikedUserList)
+                                                                                {
+
+                                                                                    <ul class="list-group">
+                                                                                        <li class="list-group-item">
+                                                                                            <img src="/Newsfeed/GetProfilePictureByProfileId/@likedUserList.Id" alt=" " style="height: 40px;width: 40px" />
+                                                                                            <a href="/Profile/ProfilePage/@likedUserList.Id">
+
+                                                                                                <h4 class="fa-font fa-facebook" style="color: 	#800080;"><b>@likedUserList.FirstName @likedUserList.LastName</b></h4>
+                                                                                            </a>
+                                                                                        </li>
+
+                                                                                    </ul>
+
+
+
+
+                                                                                    @*<div>
+                                <p>@likedUserList.FirstName @likedUserList.LastName</p>
+                            </div>*@
+                                                                                }
+
+
+
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+
+
+                                                                
+                                                                                                                    
+                                                                
+                                                                
+                                                                <button class="btn btn-default" data-toggle="collapse" data-target="#@post.Id">Comments</button>
+
+                                                                <div id="@post.Id" class="collapse">
+
+
+                                                                    <hr style="color: gainsboro"/>
+
+                                                                    @foreach (var comment in post.Comments)
+                                                                    {
+                                                                        <div>
+                                                                            <img src="/Newsfeed/GetProfilePictureByProfileId/@comment.RegistrationId" alt=" " style="height: 40px;width: 40px" />
+
+                                                                            <p>
+                                                                                <a href="/Profile/ProfilePage/@comment.RegistrationId">
+
+                                                                                    <h4 class="fa-font fa-facebook" style="color:#800080;"><b>@comment.Registration.FirstName @comment.Registration.LastName</b></h4>
+                                                                                </a> @comment.CommentText
+
+
+                                                                            </p>
+                                                                            <p>@comment.DateTime.ToString()</p>
+                                                                        </div>
+                                                                        <hr style="color: gainsboro" />
+                                                                    }
+
+
+                                                                </div>
+
+
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    }
+                                                }
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div id="friendlist" class="tab-pane fade">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><h4>Friend List</h4></div>
+
+                                            <div class="panel-body">
+
+
+
+                                                @foreach (var friend in Model.FriendList)
+                                                {
+
+
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            <img src="/Newsfeed/GetProfilePictureByProfileId/@friend.FriendId" alt=" " style="height: 40px;width: 40px" />
+                                                            <a href="/Profile/ProfilePage/@friend.FriendId">
+
+                                                                <h4 class="fa-font fa-facebook" style="color: 	#800080;"><b>@friend.Friend.FirstName @friend.Friend.LastName</b></h4>
+                                                            </a>
+                                                       
+                                                        @Html.ActionLink("Unfriend", "DropFriendRelationFromList", "Profile", new { profileId = friend.FriendId }, new { @class = "btn btn-default " })
+                                                        
+                                                        </li>
+
+                                                    </ul>
+
+
+
+                                                }
+
+
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    
+                                    <div id="friendRequestlist" class="tab-pane fade">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><h4>Friend Request List</h4></div>
+
+                                            <div class="panel-body">
+
+
+
+                                                @foreach (var friend in Model.FriendRequestList)
+                                                {
+
+
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            <img src="/Newsfeed/GetProfilePictureByProfileId/@friend.FriendId" alt=" " style="height: 40px;width: 40px" />
+                                                            <a href="/Profile/ProfilePage/@friend.FriendId">
+
+                                                                <h4 class="fa-font fa-facebook" style="color: 	#800080;"><b>@friend.Friend.FirstName @friend.Friend.LastName</b></h4>
+                                                            </a>
+                                                        </li>
+
+                                                        @Html.ActionLink("Confirm Request", "ConfirmRequestFromList", "Profile", new { profileId =friend.FriendId }, new { @class = "btn btn-default" })
+
+                                                        @Html.ActionLink("Decline", "DropFriendRelationFromList", "Profile", new { profileId = friend.FriendId }, new { @class = "btn btn-default" })
+
+
+                                                    </ul>
+
+
+
+                                                }
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    <div id="aboutme" class="tab-pane fade">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><h4>About</h4></div>
+
+                                            <div class="panel-body">
+
+                                                <div class="row marketing">
+                                                    <div class="col-lg-12">
+                                                        <h4>Name</h4>
+                                                        <p>
+                                                            Name: @Model.Registration.FirstName @Model.Registration.LastName 
+                                                            
+                                                            @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#nameinfo">Edit</button>
+                                                           
+                                                            }
+                                                        </p>
+                                             
+                                                        <div id="nameinfo" class="collapse">
+
+                                                            @using (Html.BeginForm("ChangeName", "Profile", FormMethod.Post, new {id = "changeName", @class = "form-inline"}))
+                                                            {
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(m => m.ChangeName.FirstName)
+                                                                    @Html.TextBoxFor(a => a.ChangeName.FirstName, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(a => a.ChangeName.FirstName)
+                                                                </div>
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeName.LastName)
+                                                                        @Html.TextBoxFor(a => a.ChangeName.LastName, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeName.LastName)
+                                                                    </div>
+                                                                <button type="submit" class="btn btn-default">Change</button>
+                                                            }
+
+                                                        </div>
+                                                              <hr />
+                                                            <h4>Gender</h4>
+                                                            <p>
+                                                                Gender: @Model.Registration.Gender
+
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#gender">Edit</button>
+
+
+
+                                                            }
+
+
+
+                                                            </p>
+                                                            <div id="gender" class="collapse">
+                                                                                                                                @using (Html.BeginForm("ChangeGender", "Profile", FormMethod.Post, new { id = "changeGender", @class = "form-inline" }))
+                                                                                                                                {
+                                                                                                                                    <div class="form-group">
+                                                                                                                                        @Html.LabelFor(a => a.Registration.Gender)
+                                                                                                                                        @Html.RadioButtonFor(a => a.ChangeGender.Gender, "Male") Male
+                                                                                                                                        @Html.RadioButtonFor(a => a.ChangeGender.Gender, "Female") Female
+                                                                                                                                        @Html.ValidationMessageFor(a => a.ChangeGender.Gender)
+                                                                                                                                    </div>
+                                                                                                                                            <button type="submit" class="btn btn-default">Change</button>
+
+                                                                                                                                }
+                                                                    </div>
+
+
+                                                        <hr/>
+                                                        <h4>Date Of Birth</h4>
+                                                        <p>
+                                                            Name: @Model.Registration.BirthDate.ToShortDateString()
+
+                                                            @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#dateofbirth">Edit</button>
+
+                                                            }
+                                                        </p>
+
+                                                        <div id="dateofbirth" class="collapse">
+
+                                                            @using (Html.BeginForm("ChangeDateOfBirth", "Profile", FormMethod.Post, new { id = "changeDateofBirth", @class = "form-inline" }))
+                                                            {
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(a => a.ChangeDateOfBirth.DateOfBirth)
+                                                                    @Html.TextBoxFor(a => a.ChangeDateOfBirth.DateOfBirth, htmlAttributes: new { id = "BirthDate" })
+                                                                    @Html.ValidationMessageFor(a => a.ChangeDateOfBirth.DateOfBirth)
+                                                                </div>
+
+                                                                <button type="submit" class="btn btn-default">Change</button>
+                                                            }
+
+                                                        </div>
+                                                        
+                                                        
+                                                        
+
+                                                        <hr />
+                                                            <h4>About Me</h4>
+                                                            <p>
+                                                                About: @Model.BasicInfoViewModel.About
+
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#about">Edit</button>
+
+                                         
+
+
+                                                            }
+
+                                                            </p>
+
+                                                            <div id="about" class="collapse">
+                                                                @using (Html.BeginForm("ChangeAboutMe", "Profile", FormMethod.Post, new { id = "changeAboutMe" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeAboutMe.AboutMe)
+                                                                        @Html.TextAreaFor(a => a.ChangeAboutMe.AboutMe, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeAboutMe.AboutMe)
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-default">Change</button>
+                                                                        }
+                                                                    </div>
+
+                                                            <hr />
+                                                            <h4>Education</h4>
+                                                            <p>
+                                                                Education: @Model.BasicInfoViewModel.Education
+
+
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#education">Edit</button>
+
+
+
+
+                                                            }
+
+
+                                                            </p>
+                                                            <div id="education" class="collapse">
+                                                                @using (Html.BeginForm("ChangeEducation", "Profile", FormMethod.Post, new { id = "changeEducation" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeEducation.Education)
+                                                                        @Html.TextAreaFor(a => a.ChangeEducation.Education, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeEducation.Education)
+
+
+
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                            </div>
+
+                                                            <hr />
+                                                            <h4>Experiences</h4>
+                                                            <p>
+                                                                Experiences: @Model.BasicInfoViewModel.Experiences
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#experiences">Edit</button>
+
+
+
+
+                                                            }
+
+
+                                                            </p>
+
+                                                            <div id="experiences" class="collapse">
+                                                                @using (Html.BeginForm("ChangeExperiences", "Profile", FormMethod.Post, new { id = "changeExperiences" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeExperiences.Experiences)
+                                                                        @Html.TextAreaFor(a => a.ChangeExperiences.Experiences, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeExperiences.Experiences)
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                            </div>
+
+                                                            <hr />
+                                                            <h4>Area of Interest</h4>
+                                                            <p>
+                                                                Area of Interest: @Model.BasicInfoViewModel.AreaOfInterest
+
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#interest">Edit</button>
+
+
+
+
+
+                                                            }
+
+                                                            </p>
+
+                                                            <div id="interest" class="collapse">
+                                                                @using (Html.BeginForm("ChangeAreaOfInterest", "Profile", FormMethod.Post, new { id = "changeAreaOfInterest" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeAreaOfInterest.AreaOfInterest)
+                                                                        @Html.TextAreaFor(a => a.ChangeAreaOfInterest.AreaOfInterest, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeAreaOfInterest.AreaOfInterest)
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                            </div>
+
+                                                            <hr />
+                                                            <h4>Location</h4>
+                                                            <p>
+                                                                City: @Model.BasicInfoViewModel.City<br />
+                                                                Country: @Model.BasicInfoViewModel.Country
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#location">Edit</button>
+
+
+
+
+                                                            }
+                                                            </p>
+                                                            <div id="location" class="collapse">
+                                                                @using (Html.BeginForm("ChangeCity", "Profile", FormMethod.Post, new { id = "changeCity", @class = "form-inline" }))
+                                                                {<div class="form-group">
+                                                                    @Html.LabelFor(m => m.ChangeCity.City)
+                                                                    @Html.TextBoxFor(a=>a.ChangeCity.City, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(a => a.ChangeCity.City)
+                                                                </div>
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                                @using (Html.BeginForm("ChangeCountry", "Profile", FormMethod.Post, new { id = "changeCountry", @class = "form-inline" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeCountry.Country)
+                                                                        @Html.TextBoxFor(a => a.ChangeCountry.Country, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeCountry.Country)
+
+                                                                    </div>
+                                                                <button type="submit" class="btn btn-default">Change</button>
+
+                                                                }
+                                                            </div>
+                                                            <hr />
+                                                            <h4>Contact</h4>
+                                                            <p>
+                                                                Email Address: @Model.BasicInfoViewModel.ContactEmail<br />
+                                                                Phone Number: @Model.BasicInfoViewModel.PhoneNo
+
+                                                                @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                            {
+
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#contact">Edit</button>
+
+
+                                                            }
+                                                            </p>
+
+                                                            <div id="contact" class="collapse form-inline">
+                                                                @using (Html.BeginForm("ChangeContactEmail", "Profile", FormMethod.Post, new { id = "changeContactEmail", @class = "form-inline" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangeEmail.Email)
+                                                                        @Html.TextBoxFor(a => a.ChangeEmail.Email, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangeEmail.Email)
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                                @using (Html.BeginForm("ChangePhoneNo", "Profile", FormMethod.Post, new { id = "changePhoneNo", @class = "form-inline" }))
+                                                                {
+                                                                    <div class="form-group">
+                                                                        @Html.LabelFor(m => m.ChangePhoneNo.PhoneNo)
+                                                                        @Html.TextBoxFor(a => a.ChangePhoneNo.PhoneNo, new { @class = "form-control" })
+                                                                        @Html.ValidationMessageFor(a => a.ChangePhoneNo.PhoneNo)
+                                                                    </div>
+
+                                                                    <button type="submit" class="btn btn-default">Change</button>
+                                                                }
+                                                            </div>
+
+
+
+                                                            @if (@Model.Registration.Id == Model.LoggedInUser.Id)
+                                                    {
+
+
+
+                                                                <hr />
+                                                                <h4>Change Password</h4>
+                                                                <p>
+                                                                  
+
+                                                                    <button class="btn btn-default pull-right btn-xs" data-toggle="collapse" data-target="#changePassword">Edit</button>
+
+
+
+
+                                                                </p>
+                                                                <div id="changePassword" class="collapse">
+                                                                    @using (Html.BeginForm("ChangePassword", "Profile", FormMethod.Post, new { id = "changePasswordForm" }))
+                                                                    {
+                                                                        <div class="form-group">
+                                                                            
+                                                                            @Html.LabelFor(m=>m.ChangePassword.Password)
+                                                                            @Html.PasswordFor(a=>a.ChangePassword.Password,new{@class="form-control"})
+                                                                            @Html.ValidationMessageFor(a=>a.ChangePassword.Password)
+                                                                          
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            @Html.LabelFor(m => m.ChangePassword.NewPassword)
+                                                                            @Html.PasswordFor(a => a.ChangePassword.NewPassword, new { @class = "form-control" })
+                                                                            @Html.ValidationMessageFor(a => a.ChangePassword.NewPassword)
+
+
+                                                                        </div>
+                                                                            <div class="form-group">
+                                                                                @Html.LabelFor(m => m.ChangePassword.ConfirmPassword)
+                                                                                @Html.PasswordFor(a => a.ChangePassword.ConfirmPassword, new { @class = "form-control" })
+                                                                                @Html.ValidationMessageFor(a => a.ChangePassword.ConfirmPassword)
+
+
+                                                                            </div>
+                                                                        <button type="submit" class="btn btn-default">Change</button>
+                                                                    }
+                                                                </div>
+                                                    }
+                                                        </div>
+                                                </div>
+
+
+
+                                                </div>
+                                        </div>
+
+
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Change Profile Photo</h4>
+                    </div>
+                    <div class="modal-body">
+                        @using (Html.BeginForm("ChangeProfilePic", "Profile", FormMethod.Post, new { id = "changeProPicForm", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                        {
+
+                            <input type="file" name="ImageData" id="ImageData" onchange=" fileCheck(this); " />
+                            <button class="btn btn-default" type="submit">Change Profile Picture</button>
+                        }
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div id="myCoverModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Change Profile Photo</h4>
+                    </div>
+                    <div class="modal-body">
+                        @using (Html.BeginForm("ChangeCoverPic", "Profile", FormMethod.Post, new { id = "changeCoverPicForm", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                        {
+
+                            <input type="file" name="ImageData" id="ImageData" onchange=" fileCheck(this); " />
+                            <button class="btn btn-default" type="submit">Change Cover Picture</button>
+                        }
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+            <script>
+                $(document).ready(function () {
+
+                    $("#search_text").keyup(function () {
+
+                        var inputSearch = $(this).val();
+                        var dataString = inputSearch;
+                        var jsonData = { text: dataString };
+                        if (inputSearch != '') {
+                            $.ajax({
+                                type: "POST",
+                                contentType: "application/json; charset=utf-8",
+                                url: "../Newsfeed/GetUserListByPartialText",
+                                data: JSON.stringify(jsonData),
+                                cache: false,
+                                success: function (data) {
+                                    $("#divResult").html(data).show();
+                                }
+                            });
+                        } return false;
+                    });
+
+                    jQuery("#divResult").on("click", function (e) {
+                        var $clicked = $(e.target);
+                        var $name = $clicked.find('.name').html();
+                        var decoded = $("<div/>").html($name).text();
+                        $('#search_text').val(decoded);
+                    });
+                    jQuery(document).on("click", function (e) {
+                        var $clicked = $(e.target);
+                        if (!$clicked.hasClass("search")) {
+                            jQuery("#divResult").fadeOut();
+                        }
+                    });
+                    $('#search_text').click(function () {
+                        jQuery("#divResult").fadeIn();
+                    });
+
+                    $(".nav-tabs a").click(function () {
+                        $(this).tab('show');
+                    });
+                    
+                    $('#BirthDate').datepicker({
+
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                    
+                });
+            </script>
+</body>
+</html>

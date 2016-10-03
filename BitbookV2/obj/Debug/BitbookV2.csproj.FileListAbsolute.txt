@@ -1,0 +1,184 @@
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\BitbookV2.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\EntityFramework.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.Deployment.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.Razor.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\EntityFramework.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.Deployment.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Webpages.Razor.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.registrationonly.resources
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addedremotetoEmailattributeinregister.resources
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.remotevalidationsecondtry.resources
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.remotevalidation3rd.resources
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+c:\users\hp\documents\visual studio 2013\Projects\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\BitbookV2.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\EntityFramework.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\EntityFramework.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.xml
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.first.resources
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+C:\Users\HP\Desktop\Bitbook Project\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\BitbookV2.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\EntityFramework.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\EntityFramework.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.first.resources
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.second.resources
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addedprofilephoto.resources
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+C:\Users\Bdjobs\Desktop\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addimagev2.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.imagev4.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.imagev5.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.imgv6.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.imgv7.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addphotov8.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addphotov9.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.friendsv1.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.friendsv2.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv1.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv3.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv4.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv5.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv6.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.addnotiv7.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.photoeditv4.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.photov99.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.photov999.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.photov9999.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.photov1000.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bfv4.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.xml
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bf5.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bfv7.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bf7.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bfv71.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bf999.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bf10.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.bfv200.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.testfinals.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finals2.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finals3.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finals4.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finals5.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finalsv7.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finalsv8.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finalsv81.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finalsv9.resources
+C:\Users\HP\Desktop\Bitbook Project\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.finalsv10.resources
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.xml
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csprojResolveAssemblyReference.cache
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.dolars.resources
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+G:\Dot Net Final Presentation\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll.config
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\BitbookV2.pdb
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\EntityFramework.SqlServer.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Helpers.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Mvc.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.Razor.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\bin\System.Web.WebPages.Razor.xml
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csprojResolveAssemblyReference.cache
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.Migrations.dolars.resources
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.csproj.GenerateResource.Cache
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.dll
+C:\Users\dolar\Desktop\bitbook project latest\BitbookV2\BitbookV2\obj\Debug\BitbookV2.pdb

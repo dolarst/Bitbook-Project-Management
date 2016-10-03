@@ -1,0 +1,100 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Montserrat);
+ 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+#search {
+    
+    width: 357px;
+    margin: 4px;
+}
+#search_text{
+    width: 297px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    border: 0 none;
+    height: 30px;
+    margin-right: 0;
+    color: white;
+    outline: none;
+    background: #1f7f5c;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+}
+#search_text:focus {
+    background: rgb(64, 151, 119);
+}
+#search_button {
+    border: 0 none;
+    background: #1f7f5c ;
+    width: 60px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+    #divResult
+        {
+                position:fixed;
+                width:357px;
+                display:none;
+                margin-top:0px;
+                border:solid 1px #dedede;
+                border-top:0px;
+                overflow:hidden;
+            
+                box-shadow: 0px 0px 5px #999;
+                border-width: 1px 1px 1px;
+                border-style: solid;
+                border-color: #333 #DEDEDE #DEDEDE;
+                background-color: white;
+        }
+        .display_box
+        {
+                padding:4px; border-top:solid 1px #dedede; 
+                font-size:12px; height:50px;
+            color: black;
+               
+        }
+        .display_box:hover
+        {
+                background:#3bb998;
+                color:#FFFFFF;
+                cursor:pointer;
+        }
+
+
+
+ 
+
+
+
+
+
